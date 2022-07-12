@@ -4,7 +4,7 @@ require "iota/crypto/sha3_ruby"
 
 class Sha3Test < Minitest::Test
   def setup
-    @ruby_sha3_class = Digest::RubySHA3
+    @ruby_sha3_class = Digest::Keccak
     unless RUBY_PLATFORM =~ /java/
       require 'digest/sha3'
       @c_sha3_class = Digest::SHA3

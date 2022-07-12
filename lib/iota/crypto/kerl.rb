@@ -10,8 +10,8 @@ module IOTA
 
       def reset
         unless RUBY_PLATFORM =~ /java/
-          require 'digest/sha3'
-          @hasher = Digest::SHA3.new(BIT_HASH_LENGTH)
+          require 'digest/keccak'
+          @hasher = Digest::Keccak.new(BIT_HASH_LENGTH)
         else
           require "iota/crypto/sha3_ruby"
           @hasher = Digest::RubySHA3.new(BIT_HASH_LENGTH)
